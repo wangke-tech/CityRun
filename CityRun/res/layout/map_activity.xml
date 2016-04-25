@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <com.baidu.mapapi.MapView
+        android:id="@+id/bmapsView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true" />
+
+    <SlidingDrawer
+        android:id="@+id/menuSliding"
+        android:layout_width="160dp"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:animateOnClick="true"
+        android:content="@+id/content"
+        android:handle="@+id/handle"
+        android:orientation="horizontal" >
+"
+
+        <TextView
+            android:id="@+id/handle"
+            android:layout_width="15sp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:clickable="true"
+            android:padding="5dp"
+            android:textColor="@color/sliding_text_color"
+            android:textSize="25sp" />
+
+        <RelativeLayout
+            android:id="@+id/content"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/lowtransparent_background"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <com.renren.api.connect.android.view.ProfilePhotoView
+                android:id="@+id/renrenpoto"
+                android:layout_width="50dip"
+                android:layout_height="50dip" />
+
+            <com.renren.api.connect.android.view.ProfileNameView
+                android:id="@+id/renrenname"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:paddingLeft="60dip"
+                android:textColor="@color/sliding_text_color"
+                android:textSize="20sp" />
+
+
+            <ListView
+                android:id="@+id/datalist"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp" />
+        </RelativeLayout>
+    </SlidingDrawer>
+
+    <Button
+        android:id="@+id/satelliteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="卫星" />
+
+</RelativeLayout>
